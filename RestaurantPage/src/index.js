@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutButton = document.querySelector('button:nth-of-type(3)');
 
     homeButton.addEventListener('click', () => switchTab(makeHomeTab));
-    homeButton.addEventListener('click', () => switchTab(makeMenuTab));
-    homeButton.addEventListener('click', () => switchTab(makeAboutTab));
+    menuButton.addEventListener('click', () => switchTab(makeMenuTab));
+    aboutButton.addEventListener('click', () => switchTab(makeAboutTab));
 
     switchTab(makeHomeTab);
 });

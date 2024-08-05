@@ -1,5 +1,8 @@
+import picture from '../sarang.jpg';
+
 export default function makeHomeTab() {
     const homePage = document.createElement('div');
+    homePage.classList.add('centered');
 
     const headline = document.createElement('h1');
     headline.textContent = 'Hello, this is the Restaurant homepage';

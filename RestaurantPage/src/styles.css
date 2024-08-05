@@ -24,9 +24,9 @@ nav button {
     padding: 2px 5px;
 }
 
-/* home page */
+/* pages */
 
-#content {
+.centered {
     display: flex;
     flex-direction: column;
     align-items: center;
