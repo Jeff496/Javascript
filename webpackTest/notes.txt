@@ -1,3 +1,4 @@
 - give webpack an entry point/file from which it branches off and builds a dependency graph
 - bundles all files into single output file which is used as src file for the html dist script
 - can list multiple entries points if there are multiple html files that their own bundles
+- loaders and rules for anything not js
