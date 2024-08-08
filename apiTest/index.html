@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="#" />
+    <form id="gifForm">
+      <label for="search">Search for a Gif: </label>
+      <input type="text" id="search" name="search" required />
+      <button type="submit">Go!</button>
+    </form>
+    <script>
+      document.getElementById("gifForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const img = document.querySelector("img");
+        const searchResults = document.querySelector("input").value;
+        fetch(
+          `https://api.giphy.com/v1/gifs/translate?api_key=tR0GrwxMozZQX6Z8ADqTgZ8xsFL7nuh0&s=${searchResults}`,
+          { mode: "cors" }
+        )
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (response) {
+            img.src = response.data.images.original.url;
+          })
+          .catch((error) => {
+            console.log("error fetching fig: ", error);
+          });
+      });
+    </script>
+  </body>
+</html>
