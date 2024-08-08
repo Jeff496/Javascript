@@ -18,20 +18,18 @@
 
         const img = document.querySelector("img");
         const searchResults = document.querySelector("input").value;
-        fetch(
+
+        getGif(img);
+      });
+
+      async function getGif(img, searchResults) {
+        const response = await fetch(
           `https://api.giphy.com/v1/gifs/translate?api_key=tR0GrwxMozZQX6Z8ADqTgZ8xsFL7nuh0&s=${searchResults}`,
           { mode: "cors" }
-        )
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (response) {
-            img.src = response.data.images.original.url;
-          })
-          .catch((error) => {
-            console.log("error fetching fig: ", error);
-          });
-      });
+        );
+        const results = await response.json();
+        img.src = results.data.images.original.url;
+      }
     </script>
   </body>
 </html>
